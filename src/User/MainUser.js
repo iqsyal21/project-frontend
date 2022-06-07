@@ -13,16 +13,21 @@ const MainUser = () => {
 
   const { register, handleSubmit } = useForm();
 
+  console.log(sessionStorage.getItem("id_user"));
+  console.log(sessionStorage.getItem("name"));
+
   async function simpan(data) {
     const formData = new FormData();
-    formData.append("name", data.name);
+    formData.append("id_user", sessionStorage.getItem("id_user"))
+    formData.append("name", sessionStorage.getItem("name"));
     formData.append("phone", data.phone);
     formData.append("image", data.image[0]);
     formData.append("location", data.location);
 
     const res = await link.post("/laporan", formData);
     if (res) {
-      alert("data berhasil ditambahkan, silahkan refresh halaman");
+      alert("data berhasil ditambahkan");
+      window.location.reload();
     }
   }
 
@@ -36,7 +41,7 @@ const MainUser = () => {
   useEffect(() => {
     let ambil = true;
     async function fetchData() {
-      const response = await link.get("/laporan");
+      const response = await link.get("/laporan/user/" + sessionStorage.getItem("id_user"));
       if (ambil) {
         setisi(response.data);
       }
@@ -80,7 +85,7 @@ const MainUser = () => {
           <div className="card" style={{ width: "18rem" }}>
             <img src={detaildata.image} alt={detaildata.location} className="card-img-top" />
             <div className="card-body">
-              <p className="card-text">Nama : {detaildata.name}</p>
+              <p className="card-text">Nama : {sessionStorage.getItem("name")}</p>
               <p className="card-text">Telepon : {detaildata.phone}</p>
               <p className="card-text">Lokasi : {detaildata.location}</p>
               <p className="card-text">Status : {detaildata.status}</p>
@@ -97,18 +102,6 @@ const MainUser = () => {
 
       <div className="col">
         <form onSubmit={handleSubmit(simpan)}>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">
-              Nama
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="name"
-              placeholder="Nama"
-              ref={register({ required: true })}
-            />
-          </div>
           <div className="mb-3">
             <label htmlFor="phone" className="form-label">
               Telepon
