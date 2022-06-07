@@ -3,13 +3,9 @@ import React, { useState, useEffect } from "react";
 import { link } from "../Axios/link";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
-import { Redirect } from "react-router-dom";
 
 Modal.setAppElement("#root");
 const MainAdmin = () => {
-  if (sessionStorage.getItem("token") === "undefined") {
-    return < Redirect to ="/login" />;
-  }
 
   const [isi, setisi] = useState([]);
   const [idlaporan, setidlaporan] = useState("");
@@ -22,7 +18,8 @@ const MainAdmin = () => {
     if (konfirmasi) {
       const res = await link.delete("/laporan/" + id);
       if (res) {
-        alert("data berhasil dihapus, silahkan refresh halaman");
+        alert("data berhasil dihapus");
+        window.location.reload();
       }
     }
   }
@@ -36,7 +33,8 @@ const MainAdmin = () => {
   async function updateStatus(data) {
     const res = await link.put("/laporan/" + idlaporan, data);
     if (res) {
-      alert("data berhasil diupdate, silahkan refresh halaman");
+      alert("data berhasil diupdate");
+      window.location.reload();
     }
     console.log(data);
     setMopen(false)

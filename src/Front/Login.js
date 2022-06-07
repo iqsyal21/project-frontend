@@ -12,20 +12,21 @@ const Login = () => {
         const response = await link.post("/login", data)
         let dataResponse = response.data.data;
 
-        let token = dataResponse.api_token;
-        let level = dataResponse.level;
-        
-        sessionStorage.setItem("token", token);
-        sessionStorage.setItem("level", level);
+        sessionStorage.setItem("token", dataResponse.api_token);
+        sessionStorage.setItem("level", dataResponse.level);
+        sessionStorage.setItem("name", dataResponse.name);
+        sessionStorage.setItem("id_user", dataResponse.id);
 
-        if (getToken() !== "undefined") {
+        if (getToken() !== undefined) {
           if (getLevel() === "user") {
             history.push("/user");
+            window.location.reload();
           } else {
             history.push("/admin");
+            window.location.reload();
           }
         } else {
-          alert("login gagal, silahkan refresh halaman dan ulangi kembali");
+          alert("login gagal, silahkan ulangi kembali");
         }
     }
 
@@ -65,6 +66,9 @@ const Login = () => {
           </form>
           <div className="mt-2 text-center">
             belum punya akun ? <a href="/register">daftar</a>
+          </div>
+          <div className="mt-4 text-center">
+            <a href="/home">kembali ke menu utama</a>
           </div>
         </div>
       </div>

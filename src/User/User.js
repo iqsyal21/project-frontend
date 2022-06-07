@@ -5,12 +5,11 @@ import { Redirect } from "react-router-dom";
 
 const User = () => {
 
-    console.log(sessionStorage.getItem("token"));
   if (
-    sessionStorage.getItem("token") === "undefined" ||
-    sessionStorage.getItem("token") === "null"
+    (sessionStorage.getItem("token") === undefined) ||
+    (sessionStorage.getItem("token") === null)
   ) {
-      console.log(sessionStorage.getItem("token"))
+    console.log(sessionStorage.getItem("token"))
     return <Redirect to="/login" />;
   }
 

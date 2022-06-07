@@ -55,7 +55,7 @@ const Register = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary">
-              Dafar
+              Daftar
             </button>
           </form>
           <div className="mt-2 text-center">
