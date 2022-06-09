@@ -13,14 +13,38 @@ const Nav = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-light bg-light">
-        <div className="container-fluid">
-          <a className="navbar-brand">Navbar</a>
+      <nav className="navbar navbar-expand-lg navbar-light p-3 rounded shadow-sm">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <img
+              src="#"
+              alt
+              width={30}
+              height={24}
+              className="d-inline-block align-text-top"
+            />
+            SAPDACIL
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div>
+            <div className="collapse navbar-collapse text-right" id="navbarNav">
           <div>
             Dashboard {sessionStorage.getItem("name")}
             <button onClick={hapus} className="btn btn-outline-danger ml-4" type="submit">
               Logout
             </button>
+          </div>
+            </div>
           </div>
         </div>
       </nav>

@@ -6,7 +6,6 @@ import Modal from "react-modal";
 
 Modal.setAppElement("#root");
 const MainUser = () => {
-
   const [isi, setisi] = useState([]);
   const [detaildata, setdetaildata] = useState("");
   const [mopen, setmopen] = useState(false);
@@ -18,7 +17,7 @@ const MainUser = () => {
 
   async function simpan(data) {
     const formData = new FormData();
-    formData.append("id_user", sessionStorage.getItem("id_user"))
+    formData.append("id_user", sessionStorage.getItem("id_user"));
     formData.append("name", sessionStorage.getItem("name"));
     formData.append("phone", data.phone);
     formData.append("image", data.image[0]);
@@ -41,7 +40,9 @@ const MainUser = () => {
   useEffect(() => {
     let ambil = true;
     async function fetchData() {
-      const response = await link.get("/laporan/user/" + sessionStorage.getItem("id_user"));
+      const response = await link.get(
+        "/laporan/user/" + sessionStorage.getItem("id_user")
+      );
       if (ambil) {
         setisi(response.data);
       }
@@ -73,7 +74,7 @@ const MainUser = () => {
             bottom: "auto",
             marginRight: "-50%",
             transform: "translate(-50%, -50%)",
-            width: "50%",
+            width: "fit-content",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -81,23 +82,29 @@ const MainUser = () => {
           },
         }}
       >
-        <h2>Laporan Saya</h2>
-          <div className="card" style={{ width: "18rem" }}>
-            <img src={detaildata.image} alt={detaildata.location} className="card-img-top" />
-            <div className="card-body">
-              <p className="card-text">Nama : {sessionStorage.getItem("name")}</p>
-              <p className="card-text">Telepon : {detaildata.phone}</p>
-              <p className="card-text">Lokasi : {detaildata.location}</p>
-              <p className="card-text">Status : {detaildata.status}</p>
-            </div>
+        <h2>Detail Laporan</h2>
+        <div className="card" style={{ width: "18rem" }}>
+          <img
+            src={detaildata.image}
+            alt={detaildata.location}
+            className="card-img-top"
+          />
+          <div className="card-body">
+            <p className="card-text">Nama : {sessionStorage.getItem("name")}</p>
+            <p className="card-text">Telepon : {detaildata.phone}</p>
+            <p className="card-text">Lokasi : {detaildata.location}</p>
+            <p className="card-text">Status : {detaildata.status}</p>
           </div>
+        </div>
         <button onClick={() => setmopen(false)} className="btn btn-success m-3">
           Oke
         </button>
       </Modal>
 
       <div className="row">
-        <h2>Data Laporan</h2>
+        <div className="col text-center">
+          <h2 className="pb-4 pb-lg-5">Laporkan Kecelakaan</h2>
+        </div>
       </div>
 
       <div className="col">
@@ -144,6 +151,12 @@ const MainUser = () => {
       </div>
 
       <div className="row">
+        <div className="col text-center">
+          <h2 className="pb-4 pb-lg-5">List Laporan</h2>
+        </div>
+      </div>
+
+      <div className="container">
         <table className="table">
           <thead className="thead-dark">
             <tr>
@@ -161,14 +174,15 @@ const MainUser = () => {
                   <img
                     src={val.image}
                     alt={val.location}
-                    width="150"
-                    height="100"
+                    width="200"
+                    height="150"
+                    className="img-laporan"
                   />
                 </td>
                 <td>{val.location}</td>
                 <td>
                   <button
-                    onClick={()  => showData(val.id_laporan)}
+                    onClick={() => showData(val.id_laporan)}
                     className="btn btn-primary"
                   >
                     Detail

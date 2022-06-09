@@ -1,6 +1,8 @@
 import React from "react";
 import MainUser from "./MainUser";
 import Nav from "./Nav";
+import Header from "./Header";
+import Footer from "./Footer";
 import { Redirect } from "react-router-dom";
 
 const User = () => {
@@ -15,12 +17,10 @@ const User = () => {
 
   return (
     <div>
-      <div>
-        <Nav />
-      </div>
-      <div className="container">
-        <MainUser />
-      </div>
+      <div><Nav /></div>
+      <div><Header /></div>
+      <div className="container"><MainUser /></div>
+      <div><Footer /></div>
     </div>
   );
 };

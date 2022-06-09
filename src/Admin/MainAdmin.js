@@ -107,11 +107,14 @@ const MainAdmin = () => {
           </form>
         </div>
       </Modal>
-      <div className="row">
-        <h2>Data Laporan</h2>
-      </div>
 
       <div className="row">
+        <div className="col text-center">
+          <h2 className="pb-4 pb-lg-5">Laporan User</h2>
+        </div>
+      </div>
+
+      <div className="col-md-12">
         <table className="table">
           <thead className="thead-dark">
             <tr>
@@ -134,8 +137,9 @@ const MainAdmin = () => {
                   <img
                     src={val.image}
                     alt={val.location}
-                    width="150"
-                    height="100"
+                    width="200"
+                    height="150"
+                    className="img-laporan"
                   />
                 </td>
                 <td>{val.location}</td>
