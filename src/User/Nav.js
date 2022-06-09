@@ -13,12 +13,12 @@ const Nav = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light p-3 rounded shadow-sm">
-        <div className="container">
+      <nav className="navbar navbar-expand-md navbar-light p-3 rounded shadow-sm">
+        <div className="container-fluid d-flex justify-content-between">
           <a className="navbar-brand" href="#">
             <img
               src="#"
-              alt
+              alt=""
               width={30}
               height={24}
               className="d-inline-block align-text-top"

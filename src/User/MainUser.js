@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { link } from "../Axios/link";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 Modal.setAppElement("#root");
 const MainUser = () => {
@@ -90,7 +92,7 @@ const MainUser = () => {
             className="card-img-top"
           />
           <div className="card-body">
-            <p className="card-text">Nama : {sessionStorage.getItem("name")}</p>
+            <p className="card-text">Pelapor : {sessionStorage.getItem("name")}</p>
             <p className="card-text">Telepon : {detaildata.phone}</p>
             <p className="card-text">Lokasi : {detaildata.location}</p>
             <p className="card-text">Status : {detaildata.status}</p>
@@ -107,7 +109,7 @@ const MainUser = () => {
         </div>
       </div>
 
-      <div className="col">
+      <div className="col-sm-8">
         <form onSubmit={handleSubmit(simpan)}>
           <div className="mb-3">
             <label htmlFor="phone" className="form-label">
@@ -156,42 +158,46 @@ const MainUser = () => {
         </div>
       </div>
 
-      <div className="container">
-        <table className="table">
-          <thead className="thead-dark">
-            <tr>
-              <th>No</th>
-              <th>Gambar</th>
-              <th>Lokasi</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {isi.map((val, index) => (
-              <tr key={index}>
-                <td>{no++}</td>
-                <td>
-                  <img
-                    src={val.image}
-                    alt={val.location}
-                    width="200"
-                    height="150"
-                    className="img-laporan"
-                  />
-                </td>
-                <td>{val.location}</td>
-                <td>
-                  <button
-                    onClick={() => showData(val.id_laporan)}
-                    className="btn btn-primary"
-                  >
-                    Detail
-                  </button>
-                </td>
+      <div className="container container-sm-fluid">
+        <div className="table-responsive">
+          <table className="table">
+            <thead className="thead-dark">
+              <tr>
+                <th>No</th>
+                <th>Foto</th>
+                <th>Lokasi</th>
+                <th>Status</th>
+                <th>Aksi</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {isi.map((val, index) => (
+                <tr key={index}>
+                  <td>{no++}</td>
+                  <td>
+                    <img
+                      src={val.image}
+                      alt={val.location}
+                      width="200"
+                      height="150"
+                      className="img-laporan"
+                    />
+                  </td>
+                  <td>{val.location}</td>
+                  <td></td>
+                  <td>
+                    <button
+                      onClick={() => showData(val.id_laporan)}
+                      className="btn btn-outline-info"
+                    > <FontAwesomeIcon icon={faEye} className="mr-2"/>
+                      Detail 
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

@@ -6,10 +6,10 @@ const Header = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="hero-section">
+      <div className="hero-section" data-aos="zoom-in" data-aos-offset="300" data-aos-duration="1300">
         <div className="container hero">
           <div className="row">
-            <div className="col-lg-6 text-lg-start text-center">
+            <div className="col-lg-6 text-center text-lg-left">
               <p className="hero-text pt-4 pt-md-1">
                 Satuan Pelaporan Darurat Cililin
               </p>

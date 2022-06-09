@@ -18,10 +18,10 @@ const Nav = () => {
           <a className="navbar-brand" href="#">
             <img
               src="#"
-              alt
               width={30}
               height={24}
               className="d-inline-block align-text-top"
+              alt="logo"
             />
             SAPDACIL
           </a>

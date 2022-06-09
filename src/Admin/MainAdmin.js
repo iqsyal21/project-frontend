@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { link } from "../Axios/link";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 Modal.setAppElement("#root");
 const MainAdmin = () => {
@@ -110,58 +112,58 @@ const MainAdmin = () => {
 
       <div className="row">
         <div className="col text-center">
-          <h2 className="pb-4 pb-lg-5">Laporan User</h2>
+          <h2 className="pb-4 pb-lg-5 font-weight-bolder">Laporan User</h2>
         </div>
       </div>
 
-      <div className="col-md-12">
-        <table className="table">
-          <thead className="thead-dark">
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>telepon</th>
-              <th>Gambar</th>
-              <th>Lokasi</th>
-              <th>Status</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {isi.map((val, index) => (
-              <tr key={index}>
-                <td>{nomor++}</td>
-                <td>{val.name}</td>
-                <td>{val.phone}</td>
-                <td>
-                  <img
-                    src={val.image}
-                    alt={val.location}
-                    width="200"
-                    height="150"
-                    className="img-laporan"
-                  />
-                </td>
-                <td>{val.location}</td>
-                <td>{val.status}</td>
-                <td>
-                  <button
-                    onClick={() => showData(val.id_laporan)}
-                    className="btn btn-warning m-1"
-                  >
-                    Update
-                  </button>
-                  <button
-                    onClick={() => hapus(val.id_laporan)}
-                    className="btn btn-danger m-1"
-                  >
-                    Hapus
-                  </button>
-                </td>
+      <div className="col-md-12 mb-5">
+        <div className="table-responsive">
+          <table className="table">
+            <thead className="thead-dark">
+              <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Telepon</th>
+                <th>Foto</th>
+                <th>Lokasi</th>
+                <th>Status</th>
+                <th>Aksi</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {isi.map((val, index) => (
+                <tr key={index}>
+                  <td>{nomor++}</td>
+                  <td>{val.name}</td>
+                  <td>{val.phone}</td>
+                  <td>
+                    <img
+                      src={val.image}
+                      alt={val.location}
+                      width="200"
+                      height="150"
+                      className="img-laporan"
+                    />
+                  </td>
+                  <td>{val.location}</td>
+                  <td>{val.status}</td>
+                  <td className="d-flex">
+                    <button
+                      onClick={() => showData(val.id_laporan)}
+                      className="btn btn-success m-1"
+                    ><FontAwesomeIcon icon={faPenToSquare} />
+                    </button>
+                    <button
+                      onClick={() => hapus(val.id_laporan)}
+                      className="btn btn-danger m-1"
+                    ><FontAwesomeIcon icon={faTrashCan} />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

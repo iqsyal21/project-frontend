@@ -6,8 +6,11 @@ import User from "./User/User";
 import Login from "./Front/Login";
 import Register from "./Front/Register";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+  AOS.init()
   return (
     <div className="">
       <Router>
