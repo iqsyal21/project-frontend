@@ -1,32 +1,32 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { useHistory } from "react-router-dom"; 
+import React from 'react';
+import logosapdacil from "../logosapdacil.png";
+import { useHistory } from 'react-router-dom';
 
 const Nav = () => {
+  const history = useHistory();
 
-    const history = useHistory();
-
-    function hapus() {
-        sessionStorage.clear();
-        history.push("/login");
-    }
+  function hapus() {
+    sessionStorage.clear();
+    history.push('/login');
+  }
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light p-3 rounded shadow-sm">
-        <div className="container">
-          <a className="navbar-brand" href="#">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
             <img
-              src="#"
-              alt
+              src={logosapdacil}
+              alt="logo"
               width={30}
-              height={24}
+              height={22}
               className="d-inline-block align-text-top"
             />
             SAPDACIL
           </a>
           <button
-            className="navbar-toggler"
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -34,17 +34,23 @@ const Nav = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon" />
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div>
-            <div className="collapse navbar-collapse text-right" id="navbarNav">
-          <div>
-            Dashboard {sessionStorage.getItem("name")}
-            <button onClick={hapus} className="btn btn-outline-danger ml-4" type="submit">
-              Logout
-            </button>
-          </div>
-            </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto d-flex flex-row-lg justify-content-center align-items-center">
+              <li className="nav-item me-3">
+                Dashboard {sessionStorage.getItem('name')}
+              </li>
+              <li className="nav-item me-3">
+                <button
+                  onClick={hapus}
+                  className="btn btn-outline-danger ml-4"
+                  type="submit"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>

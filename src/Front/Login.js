@@ -1,8 +1,8 @@
-import React from "react";
-import logter from "../images/logter.JPG";
-import { link } from "../Axios/link";
-import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import logter from '../images/logter.JPG';
+import { link } from '../Axios/link';
+import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -10,41 +10,41 @@ const Login = () => {
   const history = useHistory();
 
   async function login(data) {
-    const response = await link.post("/login", data);
+    const response = await link.post('/login', data);
     let dataResponse = response.data.data;
 
-    sessionStorage.setItem("token", dataResponse.api_token);
-    sessionStorage.setItem("level", dataResponse.level);
-    sessionStorage.setItem("name", dataResponse.name);
-    sessionStorage.setItem("id_user", dataResponse.id);
+    sessionStorage.setItem('token', dataResponse.api_token);
+    sessionStorage.setItem('level', dataResponse.level);
+    sessionStorage.setItem('name', dataResponse.name);
+    sessionStorage.setItem('id_user', dataResponse.id);
 
     if (getToken() !== undefined) {
-      if (getLevel() === "user") {
-        history.push("/user");
+      if (getLevel() === 'user') {
+        history.push('/user');
         window.location.reload();
       } else {
-        history.push("/admin");
+        history.push('/admin');
         window.location.reload();
       }
     } else {
-      alert("login gagal, silahkan ulangi kembali");
+      alert('login gagal, silahkan ulangi kembali');
     }
   }
 
-  const getToken = () => sessionStorage.getItem("token");
-  const getLevel = () => sessionStorage.getItem("level");
+  const getToken = () => sessionStorage.getItem('token');
+  const getLevel = () => sessionStorage.getItem('level');
 
   return (
     <div>
-      <div className="container tentang-kami">
+      <div className="container container-login tentang-kami">
         <div className="row">
           <div className="col text-center">
             <h2 className="pb-4 pb-lg-5">Login</h2>
           </div>
         </div>
-        <div className="row">
+        <div className="row align-items-center">
           <img
-            className="d-block mx-auto py-2"
+            className="d-block mx-auto py-2 w-50"
             src={logter}
             alt="Gambar orang dan mobile"
             height="320px"

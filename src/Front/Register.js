@@ -1,8 +1,8 @@
-import React from "react";
-import logter from "../images/logter.JPG";
-import { link } from "../Axios/link";
-import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import logter from '../images/logter.JPG';
+import { link } from '../Axios/link';
+import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 const Register = () => {
   const { register, handleSubmit } = useForm();
@@ -10,24 +10,24 @@ const Register = () => {
   const history = useHistory();
 
   async function daftar(data) {
-    const response = await link.post("/register", data);
+    const response = await link.post('/register', data);
     if (response) {
-      alert("register berhasil, silahkan login");
-      history.push("/login");
+      alert('register berhasil, silahkan login');
+      history.push('/login');
     }
   }
 
   return (
     <div>
-      <div className="container tentang-kami">
+      <div className="container container-login tentang-kami">
         <div className="row">
           <div className="col text-center">
             <h2 className="pb-4 pb-lg-5">Daftar</h2>
           </div>
         </div>
-        <div className="row">
+        <div className="row align-items-center">
           <img
-            className="d-block mx-auto py-2"
+            className="d-block mx-auto py-2 w-50"
             src={logter}
             alt="Gambar orang dan mobile"
             height="320px"

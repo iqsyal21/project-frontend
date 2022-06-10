@@ -1,4 +1,11 @@
-import React from "react";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebook,
+  faGithub,
+  faInstagram,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -17,10 +24,22 @@ const Footer = () => {
             </div>
             <div className="follow-us col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="mb-3 fw-bold">Follow Us</h6>
-              <i className="fab fa-facebook-square me-2" />
-              <i className="fab fa-instagram me-2" />
-              <i className="fab fa-twitter-square me-2" />
-              <i className="fab fa-youtube-square me-2" />
+              <div>
+                <a href="#" className="card-link">
+                  <i className="fab fa-facebook" />
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="#" className="card-link">
+                  <i className="fab fa-github" />
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
+                <a href="#" className="card-link">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a href="#" className="card-link">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </div>
             </div>
             <div className="footer-nav col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="mb-3 fw-bold">Navigasi</h6>
@@ -36,7 +55,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="copyright col text-center pt-3">
-            <hr/>
+            <hr />
             <p>
               Copyrights © 2022 by <span className="fw-bold">SAPDACIL</span>
             </p>

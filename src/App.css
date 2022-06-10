@@ -288,6 +288,10 @@
 }
 
 @media screen and (max-width: 670px) {
+  .container-login {
+    margin: 10px;
+  }
+
   .hero img {
       width: 300px;
       padding-bottom: 1rem;

@@ -1,37 +1,39 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState, useEffect } from "react";
-import { link } from "../Axios/link";
-import { useForm } from "react-hook-form";
-import Modal from "react-modal";
+import React, { useState, useEffect } from 'react';
+import { link } from '../Axios/link';
+import { useForm } from 'react-hook-form';
+import Modal from 'react-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
-Modal.setAppElement("#root");
+Modal.setAppElement('#root');
 const MainUser = () => {
   const [isi, setisi] = useState([]);
-  const [detaildata, setdetaildata] = useState("");
+  const [detaildata, setdetaildata] = useState('');
   const [mopen, setmopen] = useState(false);
 
   const { register, handleSubmit } = useForm();
 
-  console.log(sessionStorage.getItem("id_user"));
-  console.log(sessionStorage.getItem("name"));
+  console.log(sessionStorage.getItem('id_user'));
+  console.log(sessionStorage.getItem('name'));
 
   async function simpan(data) {
     const formData = new FormData();
-    formData.append("id_user", sessionStorage.getItem("id_user"));
-    formData.append("name", sessionStorage.getItem("name"));
-    formData.append("phone", data.phone);
-    formData.append("image", data.image[0]);
-    formData.append("location", data.location);
+    formData.append('id_user', sessionStorage.getItem('id_user'));
+    formData.append('name', sessionStorage.getItem('name'));
+    formData.append('phone', data.phone);
+    formData.append('image', data.image[0]);
+    formData.append('location', data.location);
 
-    const res = await link.post("/laporan", formData);
+    const res = await link.post('/laporan', formData);
     if (res) {
-      alert("data berhasil ditambahkan");
+      alert('data berhasil ditambahkan');
       window.location.reload();
     }
   }
 
   async function showData(id) {
-    const response = await link.get("/laporan/" + id);
+    const response = await link.get('/laporan/' + id);
     setdetaildata(response.data[0]);
     console.log(detaildata);
     setmopen(true);
@@ -41,7 +43,7 @@ const MainUser = () => {
     let ambil = true;
     async function fetchData() {
       const response = await link.get(
-        "/laporan/user/" + sessionStorage.getItem("id_user")
+        '/laporan/user/' + sessionStorage.getItem('id_user')
       );
       if (ambil) {
         setisi(response.data);
@@ -65,32 +67,34 @@ const MainUser = () => {
         onRequestClose={() => setmopen(false)}
         style={{
           overlay: {
-            background: "transparent !important",
+            background: 'transparent !important',
           },
           content: {
-            top: "50%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            transform: "translate(-50%, -50%)",
-            width: "fit-content",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+            width: 'fit-content',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
           },
         }}
       >
         <h2>Detail Laporan</h2>
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card" style={{ width: '18rem' }}>
           <img
             src={detaildata.image}
             alt={detaildata.location}
             className="card-img-top"
           />
           <div className="card-body">
-            <p className="card-text">Nama : {sessionStorage.getItem("name")}</p>
+            <p className="card-text">
+              Pelapor : {sessionStorage.getItem('name')}
+            </p>
             <p className="card-text">Telepon : {detaildata.phone}</p>
             <p className="card-text">Lokasi : {detaildata.location}</p>
             <p className="card-text">Status : {detaildata.status}</p>
@@ -107,10 +111,10 @@ const MainUser = () => {
         </div>
       </div>
 
-      <div className="col">
+      <div className="col-sm-8">
         <form onSubmit={handleSubmit(simpan)}>
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label">
+            <label htmlFor="phone" className="form-label fw-bold">
               Telepon
             </label>
             <input
@@ -122,7 +126,7 @@ const MainUser = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="image" className="form-label">
+            <label htmlFor="image" className="form-label fw-bold">
               Gambar
             </label>
             <input
@@ -133,7 +137,7 @@ const MainUser = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="lokasi" className="form-label">
+            <label htmlFor="lokasi" className="form-label fw-bold">
               Lokasi
             </label>
             <input
@@ -156,42 +160,48 @@ const MainUser = () => {
         </div>
       </div>
 
-      <div className="container">
-        <table className="table">
-          <thead className="thead-dark">
-            <tr>
-              <th>No</th>
-              <th>Gambar</th>
-              <th>Lokasi</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {isi.map((val, index) => (
-              <tr key={index}>
-                <td>{no++}</td>
-                <td>
-                  <img
-                    src={val.image}
-                    alt={val.location}
-                    width="200"
-                    height="150"
-                    className="img-laporan"
-                  />
-                </td>
-                <td>{val.location}</td>
-                <td>
-                  <button
-                    onClick={() => showData(val.id_laporan)}
-                    className="btn btn-primary"
-                  >
-                    Detail
-                  </button>
-                </td>
+      <div className="container container-sm-fluid">
+        <div className="table-responsive">
+          <table className="table">
+            <thead className="thead-dark">
+              <tr>
+                <th>No</th>
+                <th>Foto</th>
+                <th>Lokasi</th>
+                <th>Status</th>
+                <th>Aksi</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {isi.map((val, index) => (
+                <tr key={index}>
+                  <td>{no++}</td>
+                  <td>
+                    <img
+                      src={val.image}
+                      alt={val.location}
+                      width="200"
+                      height="150"
+                      className="img-laporan"
+                    />
+                  </td>
+                  <td>{val.location}</td>
+                  <td></td>
+                  <td>
+                    <button
+                      onClick={() => showData(val.id_laporan)}
+                      className="btn btn-outline-info"
+                    >
+                      {' '}
+                      <FontAwesomeIcon icon={faEye} className="mr-2" />
+                      Detail
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-import React from "react";
-import userdash from "../images/userdash.JPG";
+import React from 'react';
+import userdash from '../images/userdash.JPG';
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
         <div className="container">
           <div className="row">
             <img
-              className="d-block mx-auto py-2 mt--2"
+              className="d-block mx-auto py-2 mt--2 w-50"
               src={userdash}
               alt="Gambar orang dan mobile"
               height="320px"
