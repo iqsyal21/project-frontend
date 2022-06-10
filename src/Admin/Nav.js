@@ -17,11 +17,16 @@ const Nav = () => {
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
+<<<<<<< HEAD
               src={logosapdacil}
               alt="logo"
+=======
+              src="#"
+>>>>>>> fa416733bffc602d7a6640e7e5e0c3e113ad3d54
               width={30}
               height={22}
               className="d-inline-block align-text-top"
+              alt="logo"
             />
             SAPDACIL
           </a>
