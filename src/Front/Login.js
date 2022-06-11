@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="container container-login tentang-kami">
+      <div className="container tentang-kami ">
         <div className="row">
           <div className="col text-center">
             <h2 className="pb-4 pb-lg-5">Login</h2>
@@ -49,7 +49,7 @@ const Login = () => {
             alt="Gambar orang dan mobile"
             height="320px"
           />
-          <div className="col-lg-6 col-md-12 text-lg-start">
+          <div className="col-lg-6 col-md-12 text-lg-start login-register">
             <form onSubmit={handleSubmit(login)}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">

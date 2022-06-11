@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { link } from '../Axios/link';
 import { useForm } from 'react-hook-form';
@@ -8,16 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 Modal.setAppElement('#root');
-=======
-import React, { useState, useEffect } from "react";
-import { link } from "../Axios/link";
-import { useForm } from "react-hook-form";
-import Modal from "react-modal";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-
-Modal.setAppElement("#root");
->>>>>>> fa416733bffc602d7a6640e7e5e0c3e113ad3d54
 const MainUser = () => {
   const [isi, setisi] = useState([]);
   const [detaildata, setdetaildata] = useState('');
@@ -103,13 +92,9 @@ const MainUser = () => {
             className="card-img-top"
           />
           <div className="card-body">
-<<<<<<< HEAD
             <p className="card-text">
               Pelapor : {sessionStorage.getItem('name')}
             </p>
-=======
-            <p className="card-text">Pelapor : {sessionStorage.getItem("name")}</p>
->>>>>>> fa416733bffc602d7a6640e7e5e0c3e113ad3d54
             <p className="card-text">Telepon : {detaildata.phone}</p>
             <p className="card-text">Lokasi : {detaildata.location}</p>
             <p className="card-text">Status : {detaildata.status}</p>
@@ -206,15 +191,10 @@ const MainUser = () => {
                     <button
                       onClick={() => showData(val.id_laporan)}
                       className="btn btn-outline-info"
-<<<<<<< HEAD
                     >
                       {' '}
                       <FontAwesomeIcon icon={faEye} className="mr-2" />
                       Detail
-=======
-                    > <FontAwesomeIcon icon={faEye} className="mr-2"/>
-                      Detail 
->>>>>>> fa416733bffc602d7a6640e7e5e0c3e113ad3d54
                     </button>
                   </td>
                 </tr>

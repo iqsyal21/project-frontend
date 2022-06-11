@@ -288,7 +288,7 @@
 }
 
 @media screen and (max-width: 670px) {
-  .container-login {
+  .login-register {
     margin: 10px;
   }
 

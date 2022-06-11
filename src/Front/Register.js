@@ -19,20 +19,20 @@ const Register = () => {
 
   return (
     <div>
-      <div className="container container-login tentang-kami">
+      <div className="container tentang-kami">
         <div className="row">
           <div className="col text-center">
             <h2 className="pb-4 pb-lg-5">Daftar</h2>
           </div>
         </div>
-        <div className="row align-items-center">
+        <div className="row">
           <img
             className="d-block mx-auto py-2 w-50"
             src={logter}
             alt="Gambar orang dan mobile"
             height="320px"
           />
-          <div className="col-lg-6 col-md-12 text-lg-start">
+          <div className="col-lg-6 col-md-12 text-lg-start login-register">
             <form onSubmit={handleSubmit(daftar)}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
@@ -47,7 +47,7 @@ const Register = () => {
               </div>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
-                  Email address
+                  Email
                 </label>
                 <input
                   type="email"

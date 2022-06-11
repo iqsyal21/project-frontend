@@ -12,9 +12,9 @@ const Navigation = () => {
           <a class="navbar-brand" href="#">
             <img
               src={logosapdacil}
-              alt="logo"
-              width={30}
-              height={22}
+              alt="logo sapdacil"
+              width={28}
+              height={24}
               className="d-inline-block align-text-top"
             />
             SAPDACIL
@@ -51,20 +51,6 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
-
-      {/* <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">SAPDACIL</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="navbar-nav ms-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#tentang-kami">Tentang Kami</Nav.Link>
-              <Nav.Link href="#tim-kami">Tim Kami</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar> */}
       {/* Navigasi end */}
     </div>
   );
