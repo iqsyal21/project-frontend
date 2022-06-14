@@ -1,25 +1,31 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Satuan Pelapor Darurat Cililin APP",
+  "short_name": "SAPDACIL APP",
+  "description": "tempat membuat laporan darurat yang terhubung langsung ke RSUD Cililin",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
+      "src": "/icons/logo_150.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "150x150"
     },
     {
-      "src": "logo512.png",
+      "src": "/icons/logo_200.png",
+      "type": "image/png",
+      "sizes": "200x200"
+    },
+    {
+      "src": "/icons/logo_512.png",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/icons/logo_550.png",
+      "type": "image/png",
+      "sizes": "550x550"
     }
   ],
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#02379bfd",
   "background_color": "#ffffff"
 }

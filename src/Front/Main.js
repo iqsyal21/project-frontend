@@ -21,7 +21,7 @@ const Main = () => {
             </div>
           </div>
           <div className="row">
-            <div class="col-12 col-lg-5" data-aos="fade-right" data-aos-duration="1300">
+            <div className="col-12 col-lg-5" data-aos="fade-right" data-aos-duration="1300">
               <img
                 className="d-block mx-auto py-2"
                 src={tentangkamiimage}
