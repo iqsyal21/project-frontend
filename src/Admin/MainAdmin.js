@@ -27,7 +27,6 @@ const MainAdmin = () => {
   }
 
   function showData(id) {
-    console.log(id);
     setidlaporan(id);
     setMopen(true);
   }
@@ -38,7 +37,6 @@ const MainAdmin = () => {
       alert("data berhasil diupdate");
       window.location.reload();
     }
-    console.log(data);
     setMopen(false)
   }
 
@@ -57,7 +55,6 @@ const MainAdmin = () => {
     };
   }, []);
 
-  console.log(isi);
   let nomor = 1;
 
   return (

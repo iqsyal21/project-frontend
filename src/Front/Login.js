@@ -16,6 +16,7 @@ const Login = () => {
     sessionStorage.setItem('token', dataResponse.api_token);
     sessionStorage.setItem('level', dataResponse.level);
     sessionStorage.setItem('name', dataResponse.name);
+    sessionStorage.setItem('phone', dataResponse.phone);
     sessionStorage.setItem('id_user', dataResponse.id);
 
     if (getToken() !== undefined) {

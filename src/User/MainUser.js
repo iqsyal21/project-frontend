@@ -14,15 +14,13 @@ const MainUser = () => {
 
   const { register, handleSubmit } = useForm();
 
-  console.log(sessionStorage.getItem('id_user'));
-  console.log(sessionStorage.getItem('name'));
-
   async function simpan(data) {
     const formData = new FormData();
     formData.append('id_user', sessionStorage.getItem('id_user'));
     formData.append('name', sessionStorage.getItem('name'));
-    formData.append('phone', data.phone);
+    formData.append('phone', sessionStorage.getItem('phone'));
     formData.append('image', data.image[0]);
+    formData.append('description', data.description);
     formData.append('location', data.location);
 
     const res = await link.post('/laporan', formData);
@@ -35,7 +33,6 @@ const MainUser = () => {
   async function showData(id) {
     const response = await link.get('/laporan/' + id);
     setdetaildata(response.data[0]);
-    console.log(detaildata);
     setmopen(true);
   }
 
@@ -55,8 +52,6 @@ const MainUser = () => {
       ambil = false;
     };
   }, []);
-
-  console.log(isi);
 
   let no = 1;
 
@@ -95,7 +90,10 @@ const MainUser = () => {
             <p className="card-text">
               Pelapor : {sessionStorage.getItem('name')}
             </p>
-            <p className="card-text">Telepon : {detaildata.phone}</p>
+            <p className="card-text">
+              Telepon : {sessionStorage.getItem('phone')}
+            </p>
+            <p className="card-text">Keterangan : {detaildata.description}</p>
             <p className="card-text">Lokasi : {detaildata.location}</p>
             <p className="card-text">Status : {detaildata.status}</p>
           </div>
@@ -114,18 +112,6 @@ const MainUser = () => {
       <div className="col-sm-8">
         <form onSubmit={handleSubmit(simpan)}>
           <div className="mb-3">
-            <label htmlFor="phone" className="form-label fw-bold">
-              Telepon
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="phone"
-              placeholder="Telepon"
-              ref={register({ required: true })}
-            />
-          </div>
-          <div className="mb-3">
             <label htmlFor="image" className="form-label fw-bold">
               Gambar
             </label>
@@ -133,6 +119,17 @@ const MainUser = () => {
               type="file"
               className="form-control"
               name="image"
+              ref={register({ required: true })}
+            />
+          </div><div className="mb-3">
+            <label htmlFor="description" className="form-label fw-bold">
+              Keterangan
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="description"
+              placeholder="keterangan"
               ref={register({ required: true })}
             />
           </div>
@@ -168,7 +165,6 @@ const MainUser = () => {
                 <th>No</th>
                 <th>Foto</th>
                 <th>Lokasi</th>
-                <th>Status</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -186,7 +182,6 @@ const MainUser = () => {
                     />
                   </td>
                   <td>{val.location}</td>
-                  <td></td>
                   <td>
                     <button
                       onClick={() => showData(val.id_laporan)}

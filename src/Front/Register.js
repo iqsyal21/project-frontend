@@ -46,6 +46,17 @@ const Register = () => {
                 />
               </div>
               <div className="mb-3">
+                <label htmlFor="phone" className="form-label">
+                  Telepon
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="phone"
+                  ref={register({ required: true })}
+                />
+              </div>
+              <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Email
                 </label>
