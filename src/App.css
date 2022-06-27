@@ -1,0 +1,443 @@
+* {
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ====================== Navigasi ==================== */
+.nav-link {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #02379bfd;
+}
+
+.btn:active {
+  position: relative;
+  top: 10px;
+}
+
+/* ====================== Hero section ==================== */
+.hero-section {
+  background-color: #f3f2f2;
+  padding: 4rem 0;
+}
+
+.hero h1 {
+  font-weight: 600;
+  font-size: 2.4rem;
+  color: #031a44;
+}
+
+.hero .hero-text {
+  color: #02379bfd;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.hero p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8rem;
+  letter-spacing: .1px;
+}
+
+.button-hero .btn-daftar {
+  width: 120px; 
+  height: 60px;
+  background: #02379bfd;
+  color: #fff;
+  border: 1px solid #02379bfd;
+  font-weight: 500;
+}
+
+.button-hero .btn-daftar:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.button-hero .btn-login {
+  width: 120px; 
+  height: 60px;
+  color: #000;
+  border: 1px solid #000;
+  font-weight: 500;
+}
+
+.button-hero .btn-login:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* ====================== tentang kami ==================== */
+.tentang-kami {
+  background: #fff;
+  padding: 4rem 0;
+}
+
+.tentang-kami h2 {
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: #031a44;
+}
+
+.tentang-kami p {
+  text-align: justify;
+  line-height: 1.9rem;
+  letter-spacing: .2px;
+  font-weight: 400;
+}
+
+.tentang-kami .btn-daftar-sekarang {
+  color: #fff;
+  font-weight: 500;
+  border-radius: 30px;
+  margin-top: 5px;
+  background: #02379bfd;
+  border: 1px solid #02379bfd;
+  transition: all .2s;
+}
+
+.tentang-kami .btn-daftar-sekarang:hover {
+  color: #000;
+  font-weight: 500;
+  border-radius: 30px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #02379bfd;
+  transition: all 0.3s;
+}
+
+/* ====================== Kenapa harus lapor ==================== */
+.reason {
+  background: #f8f7f7;
+  letter-spacing: .1px;
+}
+
+.reason h2 {
+  font-weight: 600;
+  font-size: 2.3rem;
+  line-height: 3rem;
+  color: #031a44;
+}
+
+.reason h5 {
+  font-weight: 700;
+  color: #031a44;
+}
+
+.reason p {
+  font-size: 1rem;
+  line-height: 1.7rem;
+  letter-spacing: .2px;
+}
+
+.kelebihan {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.card-body a {
+  color: #000;
+  font-size: 25px;
+}
+
+/* ====================== Peduli bersama ==================== */
+.section h5 {
+  font-weight: 600;
+  color: #031a44;
+}
+
+.section .btn-daftar-sekarang {
+  background: #02379bfd;
+  color: #fff;
+  border: 1px solid #02379bfd;
+  font-weight: 500;
+}
+
+.section .btn-daftar-sekarang:hover {
+  background: transparent;
+  border: 1px solid #02379bfd;
+  color: #000;
+  font-weight: 500;
+}
+
+/* ====================== Tim kami ==================== */
+.tim-kami {
+  background-color: #f8f7f7;
+}
+
+.tim-kami h2 {
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: #031a44;
+}
+
+.card:hover {
+  box-shadow: 0 1px 20px 9px #d4d1d1;
+}
+
+.card-body {
+  margin: 5px 0;
+  letter-spacing: .2px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #031a44;
+}
+
+.card-text {
+  font-size: .9rem;
+  font-weight: 400;
+}
+
+.tim-kami .card-link {
+  color: #031a44;
+}
+
+.tim-kami .card-link:hover {
+  color: #02379bfd;
+}
+
+.sosmed {
+  width: 70%;
+}
+
+/* ====================== Footer ==================== */
+.footer {
+  background-color: #2a2a2b;
+  letter-spacing: .2px;
+}
+
+.footer h6 {
+  color: #fff;
+}
+
+.footer p {
+  font-weight: 300;
+  color: #b4b3b3;
+  font-size: .9rem;
+  line-height: 1.5rem;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #b4b3b3;
+  font-size: .9rem;
+}
+
+.footer i {
+  color: #e4dede;
+  font-size: 22px;
+}
+
+.footer i:hover {
+  color: #02379bfd;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.footer span {
+  color: #fff;
+}
+
+.footer hr {
+  background: #fff;
+}
+
+.footer .copyright p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* ====================== Scroll Top ==================== */
+.scroll-top {
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #2a2a2b;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: all .2s;
+}
+
+/* ====================== Login & Header Dashboard ==================== */
+.login-container, .header-container {
+  display: flex;
+  margin: auto;
+  padding: 10px;
+}
+
+.login-thumbnail, .header-thumbnail {
+  margin: auto;
+}
+
+.login-thumbnail img {
+  width: 100%;
+}
+
+.header-thumbnail img {
+  width: 70%;
+}
+
+.form-login{
+  flex-basis: 50%;
+}
+
+.note-dashboard {
+  margin: auto;
+  flex-basis: 50%;
+}
+
+/* ====================== List Laporan ==================== */
+.laporan-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 10px;
+  margin: auto;
+  padding: 10px;
+}
+
+.laporan-container-admin {
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 30px 10px;
+  margin: auto;
+  padding: 10px;
+}
+
+.laporan-item {
+  font-size: 0.9em;
+  height: fit-content;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.4);
+  background-color: white;
+  color: black;
+}
+
+.laporan-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.scroll-top:hover {
+  background-color: #02379bfd;
+}
+
+/* ====================== Bantuan ==================== */
+.container-bantuan {
+  display: flex;
+  margin-top: 50px;
+}
+
+.perhatian-bantuan {
+  margin: auto 25px;
+  flex-basis: 50%;
+  list-style: circle;
+}
+
+.perhatian-bantuan h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perhatian-bantuan li {
+  list-style: decimal;
+}
+
+.form-bantuan {
+  margin: 25px;
+  flex-basis: 50%;
+}
+
+.form-bantuan h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 990px) {
+  .reason-text {
+      width: 80%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .login-container, .header-container {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .hero img {
+      width: 300px;
+      padding-bottom: 1rem;
+  }
+
+  .hero h1 {
+      font-size: 2rem;
+  }
+
+  .tentang-kami h2 {
+      font-size: 2rem;
+  }
+  
+  .tentang-kami img {
+      width: 300px;
+  }
+
+  .reason h2 {
+      font-size: 2rem;
+  }
+
+  .tim-kami h2 {
+      font-size: 2rem;
+  }
+
+  .card {
+      margin-bottom: .8rem;
+  }
+
+  .img-laporan {
+    width: 100%;
+    height: 80%;
+  }
+
+  .laporan-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .laporan-container-admin {
+    display: grid;
+  }
+
+  .hide-table {
+    display: none;
+  }
+  .hide-nomor {
+    display: none;
+  }
+
+  .container-bantuan {
+    flex-direction: column;
+  }
+
+  .perhatian-bantuan {
+  margin: 25px;
+}
+}
