@@ -324,7 +324,7 @@
 
 .laporan-item {
   font-size: 0.9em;
-  height: fit-content;
+  height: auto;
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.4);

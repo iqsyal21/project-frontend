@@ -2,7 +2,7 @@ import React from "react";
 import MainUser from "./MainUser";
 import Nav from "./Nav";
 import Header from "./Header";
-import Footer from "../Front/Footer";
+import Footer from "./Footer";
 import { Redirect } from "react-router-dom";
 
 const User = () => {

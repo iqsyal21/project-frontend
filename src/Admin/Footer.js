@@ -17,7 +17,7 @@ const Footer = () => {
           <div className="row text-cente">
             <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3">
               <h6 className="fw-bold">SAPDACIL</h6>
-              <p>Satuan Pelaporan Darurat Cililin</p>
+              <p>Satuan Pelapor Darurat Cililin</p>
               <p>
                 Jl. Cinta Karya, Cililin, <br /> Kabupaten Bandung Barat, <br />
                 Jawa Barat 40562

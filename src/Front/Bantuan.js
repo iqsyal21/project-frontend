@@ -21,14 +21,13 @@ const Bantuan = () => {
           <h2>Perhatian Dalam Pengisian Form</h2>
           <ul>
             <li>
-              pastikan email yang dimasukan dapat dihubungi. hal tersebut karena
+              Pastikan email yang dimasukan dapat dihubungi. hal tersebut karena
               nantinya pihak pengelola sistem akan mengkonfirmasi lewat email.
             </li>
-            <li>masukan keterangan secukupnya saja.</li>
+            <li>Masukan keterangan secukupnya saja.</li>
             <li>
-              bila masalah yang ditemukan kompleks maka sebaiknya menghubungi
-              nomor costumer service, untuk nomor CS diberikan lewat email
-              lanjutan.
+              Bila masalah yang ditemukan kompleks maka sebaiknya menghubungi
+              nomor Costumer Service, untuk nomor tersebut akan diberikan lewat email lanjutan.
             </li>
           </ul>
         </div>

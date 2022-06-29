@@ -11,7 +11,7 @@ const Header = () => {
           <div className="row">
             <div className="col-lg-6 text-center text-lg-left">
               <p className="hero-text pt-4 pt-md-1">
-                Satuan Pelaporan Darurat Cililin
+                Satuan Pelapor Darurat Cililin
               </p>
               <h1>Awali Hidupmu Dengan</h1>
               <h1>

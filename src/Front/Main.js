@@ -31,7 +31,7 @@ const Main = () => {
             </div>
             <div className="col-12 col-lg-7 text-center text-lg-start">
               <p className="pt-4 pt-lg-0">
-                SAPDACIL (Satuan Pelaporan Darurat Cililin) adalah sebuah
+                SAPDACIL (Satuan Pelapor Darurat Cililin) adalah sebuah
                 website yang dibangun untuk mempermudah masyarakat dalam
                 melakukan panggilan darurat khususnya saat kecelakaan lalu
                 lintas. Dengan website ini, masyarakat dapat memanggil ambulans
