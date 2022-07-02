@@ -23,12 +23,14 @@ const Login = () => {
       if (getLevel() === 'user') {
         history.push('/user');
         window.location.reload();
-      } else {
+      } else if(getLevel() === 'admin'){
         history.push('/admin');
         window.location.reload();
+      } else {
+        alert('level user tidak valid, silahkan ulangi kembali');
       }
     } else {
-      alert('login gagal, silahkan ulangi kembali');
+      alert('gagal mendapatkan token, silahkan ulangi kembali');
     }
   }
 
